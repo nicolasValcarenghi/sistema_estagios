@@ -50,12 +50,12 @@ final class ProfessoresVO extends VO
         $this->$funcao = $funcao;
     }
 
-    public function getArea_id()
+    public function getAreaID()
     {
         return $this->area_id;
     }
 
-    public function setArea_id($area_id)
+    public function setAreaID($area_id)
     {
         $this->$area_id = $area_id;
     }

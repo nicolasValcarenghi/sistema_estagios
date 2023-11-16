@@ -89,32 +89,32 @@ final class EstudantesVO extends VO
         $this->telefone = $telefone;
     }
 
-    public function getCidades_id()
+    public function getCidadesID()
     {
         return $this->cidades_id;
     }
 
-    public function setCidades_id($cidades_id)
+    public function setCidadesID($cidades_id)
     {
         $this->cidades_id = $cidades_id;
     }
 
-    public function getCursos_id()
+    public function getCursosID()
     {
         return $this->cursos_id;
     }
 
-    public function setCursos_id($cursos_id)
+    public function setCursosID($cursos_id)
     {
         $this->cursos_id = $cursos_id;
     }
 
-    public function getNum_turma()
+    public function getNumTurma()
     {
         return $this->num_turma;
     }
 
-    public function setNum_turma($num_turma)
+    public function setNumTurma($num_turma)
     {
         $this->num_turma = $num_turma;
     }

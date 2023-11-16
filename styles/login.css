@@ -1,0 +1,21 @@
+*{
+    background-color: white;
+}
+#all {
+    display: flex;
+}
+#logo {
+    height: 600px;
+    width: 450px;
+    display: flex;
+}
+#left{
+    display: flex;
+}
+#right{
+    background-color: darkgreen;
+    display: flex;
+}
+h1 {
+    color: rgb(89, 172, 7);
+}

@@ -24,62 +24,62 @@ final class DocumentosVO extends VO
         $this->relatorio_final = $relatorio_final;
     }
 
-    public function getEstagios_id()
+    public function getEstagioID()
     {
         return $this->estagios_id;
     }
 
-    public function setEstagios_id($estagios_id)
+    public function setEstagioID($estagios_id)
     {
         $this->estagios_id = $estagios_id;
     }
 
-    public function getTermo_de_compromisso()
+    public function getTermoDeCompromisso()
     {
         return $this->termo_de_compromisso;
     }
 
-    public function setTermo_de_compromisso($termo_de_compromisso)
+    public function setTermoDeCompromisso($termo_de_compromisso)
     {
         $this->termo_de_compromisso = $termo_de_compromisso;
     }
 
-    public function getPlano_de_atividade()
+    public function getPlanoDeAtividade()
     {
         return $this->plano_de_atividade;
     }
 
-    public function setPlano_de_atividade($plano_de_atividade)
+    public function setPlanoDeAtividade($plano_de_atividade)
     {
         $this->plano_de_atividade = $plano_de_atividade;
     }
 
-    public function getFicha_autoavaliacao()
+    public function getFichaAutoavaliacao()
     {
         return $this->ficha_autoavaliacao;
     }
 
-    public function setFicha_autoavaliacao($ficha_autoavaliacao)
+    public function setFichaAutoavaliacao($ficha_autoavaliacao)
     {
         $this->ficha_autoavaliacao = $ficha_autoavaliacao;
     }
 
-    public function getFicha_avaliacao_empresa()
+    public function getFichaAvaliacaoEmpresa()
     {
         return $this->ficha_avaliacao_empresa;
     }
 
-    public function setFicha_avaliacao_empresa($ficha_avaliacao_empresa)
+    public function setFichaAvaliacaoEmpresa($ficha_avaliacao_empresa)
     {
         $this->ficha_avaliacao_empresa = $ficha_avaliacao_empresa;
     }
 
-    public function getRelatorio_final()
+    public function getRelatorioFinal()
     {
         return $this->relatorio_final;
     }
 
-    public function setRelatorio_final($relatorio_final)
+    public function setRelatorioFinal($relatorio_final)
     {
         $this->relatorio_final = $relatorio_final;
     }

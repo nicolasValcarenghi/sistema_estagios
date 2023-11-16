@@ -80,42 +80,42 @@ final class EmpresasVO extends VO
         $this->cnpj = $cnpj;
     }
 
-    public function getRepresentante_funcao()
+    public function getRepresentanteFuncao()
     {
         return $this->representante_funcao;
     }
 
-    public function setRepresentante_funcao($representante_funcao)
+    public function setRepresentanteFuncao($representante_funcao)
     {
         $this->representante_funcao = $representante_funcao;
     }
 
-    public function getRepresentante_cpf()
+    public function getRepresentanteCPF()
     {
         return $this->representante_cpf;
     }
 
-    public function setRepresentante_cpf($representante_cpf)
+    public function setRepresentanteCPF($representante_cpf)
     {
         $this->representante_cpf = $representante_cpf;
     }
 
-    public function getRepresentante_rg()
+    public function getRepresentanteRG()
     {
         return $this->representante_rg;
     }
 
-    public function setRepresentante_rg($representante_rg)
+    public function setRepresentanteRG($representante_rg)
     {
         $this->representante_rg = $representante_rg;
     }
 
-    public function getCidades_id()
+    public function getCidadesID()
     {
         return $this->cidades_id;
     }
 
-    public function setCidades_id($cidades_id)
+    public function setCidadesID($cidades_id)
     {
         $this->cidades_id = $cidades_id;
     }

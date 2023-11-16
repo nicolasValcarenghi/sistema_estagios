@@ -62,12 +62,12 @@ final class SupervisoresVO extends VO
         $this->email = $email;
     }
 
-    public function getEmpresas_id()
+    public function getEmpresasID()
     {
         return $this->empresas_id;
     }
 
-    public function setEmpresas_id($empresas_id)
+    public function setEmpresasID($empresas_id)
     {
         $this->empresas_id = $empresas_id;
     }

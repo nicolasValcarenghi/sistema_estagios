@@ -2,7 +2,7 @@
 
 namespace Model\VO;
 
-final class AreaVO extends VO
+final class AreasVO extends VO
 {
     private $nome;
 

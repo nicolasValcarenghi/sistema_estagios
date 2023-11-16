@@ -31,92 +31,92 @@ final class EstagiosVO extends VO
         $this->cidades_id = $cidades_id;
     }
 
-    public function getCarga_horaria()
+    public function getCargaHoraria()
     {
         return $this->carga_horaria;
     }
 
-    public function setCarga_horaria($carga_horaria)
+    public function setCargaHoraria($carga_horaria)
     {
         $this->carga_horaria = $carga_horaria;
     }
 
-    public function getEmpresas_id()
+    public function getEmpresasID()
     {
         return $this->empresas_id;
     }
 
-    public function setEmpresas_id($empresas_id)
+    public function setEmpresasID($empresas_id)
     {
         $this->empresas_id = $empresas_id;
     }
 
-    public function getEstudantes_matricula()
+    public function getEstudantesMatricula()
     {   
         return $this->estudantes_matricula;
     }
 
-    public function setEstudantes_matricula($estudantes_matricula)
+    public function setEstudantesMatricula($estudantes_matricula)
     {
         $this->estudantes_matricula = $estudantes_matricula;
     }
 
-    public function getProfessores_id()
+    public function getProfessoresID()
     {
         return $this->professores_id;
     }
 
-    public function setProfessores_id($professores_id)
+    public function setProfessoresID($professores_id)
     {
         $this->professores_id = $professores_id;
     }
 
-    public function getArea_id()
+    public function getAreaID()
     {
         return $this->area_id;
     }
 
-    public function setArea_id($area_id)
+    public function setAreaID($area_id)
     {
         $this->area_id = $area_id;
     }
 
-    public function getSupervisores_id()
+    public function getSupervisoresID()
     {
         return $this->supervisores_id;
     }
 
-    public function setSupervisores_id($supervisores_id)
+    public function setSupervisoresID($supervisores_id)
     {
         $this->supervisores_id = $supervisores_id;
     }
 
-    public function getData_inicio()
+    public function getDataInicio()
     {
         return $this->data_inicio;
     }
 
-    public function setData_inicio($data_inicio)
+    public function setDataInicio($data_inicio)
     {
         $this->data_inicio = $data_inicio;
     }
 
-    public function getPrevisao_fim()
+    public function getPrevisaoFim()
     {
         return $this->previsao_fim;
     }
 
-    public function setPrevisao_fim($previsao_fim)
+    public function setPrevisaoFim($previsao_fim)
     {
         $this->previsao_fim = $previsao_fim;
     }
 
-    public function getCidades_id()
+    public function getCidadesID()
     {
         return $this->cidades_id;
     }
 
-    public function setCidades_id($cidades_id)
+    public function setCidadesID($cidades_id)
     {
         $this->cidades_id = $cidades_id;
     }
