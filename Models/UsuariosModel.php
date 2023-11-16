@@ -42,7 +42,7 @@ final class UsuariosModel extends Model {
             ":nome" => $vo->getNome(),
             ":login" => $vo->getLogin(),
             ":senha" => sha1($vo->getSenha()),
-            ":tipo" =: $vo->getTipo()
+            ":tipo" => $vo->getTipo()
         ];
 
         $sucess = $db->execute($query, $binds);

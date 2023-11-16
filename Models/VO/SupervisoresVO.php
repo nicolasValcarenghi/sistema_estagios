@@ -2,8 +2,7 @@
 
 namespace Model\VO;
 
-final class SupervisoresVO extends VO
-{
+final class SupervisoresVO extends VO {
     private $nome;
     private $formacao;
     private $telefone;

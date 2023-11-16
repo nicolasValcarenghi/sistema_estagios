@@ -2,17 +2,20 @@
 
 namespace Model\VO;
 
-final class UsuarioVO extends VO {
+final class UsuariosVO extends VO {
 
     private $nome;
     private $login;
     private $senha;
 
-    public function __construct($id = 0, $nome = "", $login = "", $senha = "") {
+    private $tipo;
+
+    public function __construct($id = 0, $nome = "", $login = "", $senha = "", $tipo = "") {
         parent::__construct($id);
         $this->nome = $nome;
         $this->login = $login;
         $this->senha = $senha;
+        $this->tipo = $tipo;
     }
 
     public function getNome() {
@@ -37,6 +40,14 @@ final class UsuarioVO extends VO {
 
     public function setSenha($senha) {
         $this->senha = $senha;
+    }
+
+    public function getTipo() {
+        return $this->tipo;
+    }
+
+    public function setTipo($tipo) {
+        $this->tipo = $tipo;
     }
 
 }
