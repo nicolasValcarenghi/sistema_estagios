@@ -24,12 +24,12 @@ final class DocumentosVO extends VO
         $this->relatorio_final = $relatorio_final;
     }
 
-    public function getEstagioID()
+    public function getEstagioId()
     {
         return $this->estagios_id;
     }
 
-    public function setEstagioID($estagios_id)
+    public function setEstagioId($estagios_id)
     {
         $this->estagios_id = $estagios_id;
     }

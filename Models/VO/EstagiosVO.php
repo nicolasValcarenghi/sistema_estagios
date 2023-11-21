@@ -43,12 +43,12 @@ final class EstagiosVO extends VO
         $this->carga_horaria = $carga_horaria;
     }
 
-    public function getEmpresasID()
+    public function getEmpresasId()
     {
         return $this->empresas_id;
     }
 
-    public function setEmpresasID($empresas_id)
+    public function setEmpresasId($empresas_id)
     {
         $this->empresas_id = $empresas_id;
     }
@@ -63,32 +63,32 @@ final class EstagiosVO extends VO
         $this->estudantes_matricula = $estudantes_matricula;
     }
 
-    public function getOrientadoresID()
+    public function getOrientadoresId()
     {
         return $this->orientadores_id;
     }
 
-    public function setOrientadoresID($orientadores_id)
+    public function setOrientadoresId($orientadores_id)
     {
         $this->orientadores_id = $orientadores_id;
     }
 
-    public function getAreaID()
+    public function getAreaId()
     {
         return $this->area_id;
     }
 
-    public function setAreaID($area_id)
+    public function setAreaId($area_id)
     {
         $this->area_id = $area_id;
     }
 
-    public function getSupervisoresID()
+    public function getSupervisoresId()
     {
         return $this->supervisores_id;
     }
 
-    public function setSupervisoresID($supervisores_id)
+    public function setSupervisoresId($supervisores_id)
     {
         $this->supervisores_id = $supervisores_id;
     }
@@ -122,12 +122,12 @@ final class EstagiosVO extends VO
         $this->data_fim = $data_fim;
     }
 
-    public function getCoorientadoesID()
+    public function getCoorientadoesId()
     {
         return $this->coorientadores_id;
     }
 
-    public function setCoorientadoresID($coorientadores_id)
+    public function setCoorientadoresId($coorientadores_id)
     {
         $this->coorientadores_id = $coorientadores_id;
     }

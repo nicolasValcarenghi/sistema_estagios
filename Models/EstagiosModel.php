@@ -72,21 +72,22 @@ final class EstagiosModel extends Model {
 
         $db = new Database();
     
-        $query = "UPDATE estagios SET carga_horaria = :carga_horaria,empresas_id = :empresas_id,estudantes_matricula = :estudantes_matricula,
-        orientadores_id = :orientadores_id,area_id = :area_id,supervisores_id = :supervisores_id,data_inicio = :data_inicio
-        ,previsao_fim = :previsao_fim,data_fim = :data_fim,coorientadores_matricula = :coorientadores_matricula WHERE id = :id";
+        $query = "UPDATE estagios SET carga_horaria = :carga_horaria,empresas_id = 
+        :empresas_id,estudantes_matricula = :estudantes_matricula, orientadores_id = :orientadores_id,
+        area_id = :area_id,supervisores_id = :supervisores_id,data_inicio = :data_inicio,previsao_fim = :
+        previsao_fim,data_fim = :data_fim,coorientadores_matricula = :coorientadores_matricula WHERE id = :id";
 
         $binds = [
             'carga_horaria' => $vo->getCargaHoraria(),
-            'empresas_id' => $vo->getEmpresasID(),
+            'empresas_id' => $vo->getEmpresasId(),
             'estudantes_matricula' => $vo->getEstudantesMatricula(),
-            'orientadores_id' => $vo->getOrientadores_ID(),
-            'area_id' => $vo->getArea_ID(),
-            'supervisores_id' => $vo->getSupervisores_ID(),
-            'data_inicio' => $vo->getData_inicio(),
-            'previsao_fim' => $vo->getPrevisao_fim(),
-            'data_fim' => $vo->getData_fim(),
-            'coorientadores_matricula' => $vo->getCoorientadores_matricula(),
+            'orientadores_id' => $vo->getOrientadoresId(),
+            'area_id' => $vo->getAreaId(),
+            'supervisores_id' => $vo->getSupervisoresId(),
+            'data_inicio' => $vo->getDataInicio(),
+            'previsao_fim' => $vo->getPrevisaoFim(),
+            'data_fim' => $vo->getDataFim(),
+            'coorientadores_matricula' => $vo->getCoorientadoresMatricula(),
             ":id" => $vo->getId()
         ];
 

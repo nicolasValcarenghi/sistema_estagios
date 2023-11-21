@@ -38,12 +38,12 @@ final class ProfessoresVO extends VO
         $this->$email = $email;
     }
 
-    public function getAreaID()
+    public function getAreaId()
     {
         return $this->area_id;
     }
 
-    public function setAreaID($area_id)
+    public function setAreaId($area_id)
     {
         $this->$area_id = $area_id;
     }
