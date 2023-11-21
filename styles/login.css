@@ -69,4 +69,12 @@ h1 {
     font-size: 60px;
     text-align: center;
     color: rgb(89, 172, 7);
-} 
+}
+#login:focus {
+    background-color: rgb(255, 255, 255);
+    outline: none;
+}
+#senha:focus {
+    color: black;
+    outline: none;
+}
