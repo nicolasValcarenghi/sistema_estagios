@@ -7,16 +7,14 @@ final class ProfessoresVO extends VO
 
     private $nome;
     private $email;
-    private $funcao;
     private $area_id;
 
 
-    public function __construct($id = 0, $nome = "", $email = "", $funcao = "", $area_id = 0)
+    public function __construct($id = 0, $nome = "", $email = "", $area_id = 0)
     {
         parent::__construct($id);
         $this->nome = $nome;
         $this->$email = $email;
-        $this->$funcao = $funcao;
         $this->$area_id = $area_id;
     }
 
@@ -38,16 +36,6 @@ final class ProfessoresVO extends VO
     public function setEmail($email)
     {
         $this->$email = $email;
-    }
-
-    public function getFuncao()
-    {
-        return $this->funcao;
-    }
-
-    public function setFuncao($funcao)
-    {
-        $this->$funcao = $funcao;
     }
 
     public function getAreaID()

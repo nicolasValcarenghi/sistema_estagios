@@ -7,28 +7,30 @@ final class EstagiosVO extends VO
     private $carga_horaria;
     private $empresas_id;
     private $estudantes_matricula;
-    private $professores_id;
+    private $orientadores_id;
     private $area_id;
     private $supervisores_id;
     private $data_inicio;
     private $previsao_fim;
-    private $cidades_id;
+    private $data_fim;
+    private $coorientadores_id;
 
-    public function __construct($id = 0, $carga_horaria = "", $empresas_id = 0, $estudantes_matricula = 0, 
-    $professores_id = 0, $area_id = 0, $supervisores_id = 0 , $data_inicio = "", 
-    $previsao_fim = "", $cidades_id = 0)
+    public function __construct($id = 0, $carga_horaria = "", $empresas_id = 0, 
+    $estudantes_matricula = 0, $orientadores_id = 0, $area_id = 0, $supervisores_id = 0, 
+    $data_inicio = "", $previsao_fim = "", $data_fim = "", $coorientadores_id = 0)
     {
         parent::__construct($id);
 
         $this->carga_horaria = $carga_horaria;
         $this->empresas_id = $empresas_id;
         $this->estudantes_matricula = $estudantes_matricula;
-        $this->professores_id = $professores_id;
+        $this->orientadores_id = $orientadores_id;
         $this->area_id = $area_id;
         $this->supervisores_id = $supervisores_id;
         $this->data_inicio = $data_inicio;
         $this->previsao_fim = $previsao_fim;
-        $this->cidades_id = $cidades_id;
+        $this->data_fim = $data_fim;
+        $this->coorientadores_id = $coorientadores_id;
     }
 
     public function getCargaHoraria()
@@ -61,14 +63,14 @@ final class EstagiosVO extends VO
         $this->estudantes_matricula = $estudantes_matricula;
     }
 
-    public function getProfessoresID()
+    public function getOrientadoresID()
     {
-        return $this->professores_id;
+        return $this->orientadores_id;
     }
 
-    public function setProfessoresID($professores_id)
+    public function setOrientadoresID($orientadores_id)
     {
-        $this->professores_id = $professores_id;
+        $this->orientadores_id = $orientadores_id;
     }
 
     public function getAreaID()
@@ -110,14 +112,23 @@ final class EstagiosVO extends VO
     {
         $this->previsao_fim = $previsao_fim;
     }
-
-    public function getCidadesID()
+    public function getDataFim()
     {
-        return $this->cidades_id;
+        return $this->data_fim;
     }
 
-    public function setCidadesID($cidades_id)
+    public function setDataFIm($data_fim)
     {
-        $this->cidades_id = $cidades_id;
+        $this->data_fim = $data_fim;
+    }
+
+    public function getCoorientadoesID()
+    {
+        return $this->coorientadores_id;
+    }
+
+    public function setCoorientadoresID($coorientadores_id)
+    {
+        $this->coorientadores_id = $coorientadores_id;
     }
 }

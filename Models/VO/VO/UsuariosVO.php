@@ -7,7 +7,6 @@ final class UsuariosVO extends VO {
     private $nome;
     private $login;
     private $senha;
-
     private $tipo;
 
     public function __construct($id = 0, $nome = "", $login = "", $senha = "", $tipo = "") {
