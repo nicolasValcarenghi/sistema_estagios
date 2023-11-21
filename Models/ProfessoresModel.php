@@ -60,9 +60,9 @@ final class ProfessoresModel extends Model {
         $db = new Database();
         $query = "UPDATE professores SET nome = :nome, email = :email, area_id = :area_id WHERE id = :id";
         $binds = [
-            'nome' => $vo->getNome(),
-            'email' => $vo->getEmail(),
-            'area_id' => $vo->getAreaId()
+            ':nome' => $vo->getNome(),
+            ':email' => $vo->getEmail(),
+            ':area_id' => $vo->getAreaId()
         ];
 
         return $db->execute($query, $binds);

@@ -37,15 +37,14 @@ final class DocumentosModel extends Model {
 
         $db = new Database();
         $query = "INSERT INTO documentos (id, estagios_id, termo_de_compromisso, plano_de_atividade, ficha_autoavaliacao, ficha_autoavaliacao_empresa, relatorio_final)
-        VALUES (:id, :estagios_id, :termo_de_compromisso, :plano_de_atividade, :ficha_autoavaliacao, :ficha_autoavaliacao_empresa, :relatorio_final)";
+        VALUES (:estagios_id, :termo_de_compromisso, :plano_de_atividade, :ficha_autoavaliacao, :ficha_autoavaliacao_empresa, :relatorio_final)";
         $binds = [
-            'id',
-            'estagios_id',
-            'termo_de_compromisso',
-            'plano_de_atividade',
-            'ficha_autoavaliacao',
-            'ficha_autoavaliacao_empresa',
-            'relatorio_final'
+            ':estagios_id' => $vo->getEstagiosId(), 
+            ':termo_de_compromisso' => $vo->getTermoDeCompromisso(), 
+            ':plano_de_atividade' => $vo->getPlanoDeAtividade(), 
+            ':ficha_autoavaliacao' => $vo->getFichaAutoavaliacao(), 
+            ':ficha_autoavaliacao_empresa' => $vo->getFichaAutoavaliacaoEmpresa(), 
+            ':relatorio_final' => $vo->getRelatorioFinal() 
         ];
 
         $sucess = $db->execute($query, $binds);
@@ -66,12 +65,13 @@ final class DocumentosModel extends Model {
         ficha_autoavaliacao = :ficha_autoavaliacao, ficha_autoavaliacao_empresa = :ficha_autoavaliacao_empresa, relatorio_final = :relatorio_final
         WHERE id = :id";
         $binds = [
-            ':id',
-            ':estagios_id',
-            ':termo_de_compromisso',
-            ':plano_de_atividade',
-            ':ficha_autoavaliacao',
-            ':ficha_autoavaliacao_empresa'
+            ':id' => $vo->getId(),
+            ':estagios_id' => $vo->getEstagiosId(), 
+            ':termo_de_compromisso' => $vo->getTermoDeCompromisso(), 
+            ':plano_de_atividade' => $vo->getPlanoDeAtividade(), 
+            ':ficha_autoavaliacao' => $vo->getFichaAutoavaliacao(), 
+            ':ficha_autoavaliacao_empresa' => $vo->getFichaAutoavaliacaoEmpresa(), 
+            ':relatorio_final' => $vo->getRelatorioFinal() 
         ];
 
         return $db->execute($query, $binds);

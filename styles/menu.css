@@ -1,0 +1,25 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+#menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+#menu_button {
+    z-index: 2;
+}
+#icone {
+    margin-right: 30px;
+}
+#menu_lista {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 30px 100px;
+    width: 300px;
+    background-color: rgb(72, 219, 72);
+    min-height: 100vh;
+}

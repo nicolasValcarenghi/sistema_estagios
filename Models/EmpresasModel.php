@@ -41,16 +41,16 @@ final class EmpresasModel extends Model {
         (id, nome, endereco, telefone, email, cnpj, representante_funcao, representante_cpf, representante_rg, cidades_id) 
         VALUES (:id, :nome, :endereco, :telefone, :email, :cnpj, :representante_funcao, :representante_cpf, :representante_rg, :cidades_id)";
         $binds = [
-            'id' => $vo->getId(),
-            'nome' => $vo->getNome(),
-            'endereco' => $vo->getEndereco(),
-            'telefone' => $vo->getTelefone(),
-            'email' => $vo->getEmail(),
-            'cnpj' => $vo->getCnpj(),
-            'representante_funcao' => $vo->getRepresentanteFuncao(),
-            'representante_cpf' => $vo->getRepresentanteCpf(),
-            'representante_rg' => $vo->getRepresentanteRg(),
-            'cidades_id' => $vo->getCidadesId()
+            ':id' => $vo->getId(),
+            ':nome' => $vo->getNome(),
+            ':endereco' => $vo->getEndereco(),
+            ':telefone' => $vo->getTelefone(),
+            ':email' => $vo->getEmail(),
+            ':cnpj' => $vo->getCnpj(),
+            ':representante_funcao' => $vo->getRepresentanteFuncao(),
+            ':representante_cpf' => $vo->getRepresentanteCpf(),
+            ':representante_rg' => $vo->getRepresentanteRg(),
+            ':cidades_id' => $vo->getCidadesId()
         ];
 
         $sucess = $db->execute($query, $binds);
@@ -69,15 +69,15 @@ final class EmpresasModel extends Model {
 
         $query = "UPDATE empresas SET nome = :nome,  endereco = :endereco,  telefone = :telefone,  email = :email,  cnpj = :cnpj,  representante_funcao = :representante_funcao,  representante_cpf = :representante_cpf,  representante_rg = :representante_rg,  cidades_id = :cidades_id WHERE id = :id";
         $binds = [
-            'nome' => $vo->getNome(),
-            'endereco' => $vo->getEndereco(),
-            'telefone' => $vo->getTelefone(),
-            'email' => $vo->getEmail(),
-            'cnpj' => $vo->getCnpj(),
-            'representante_funcao' => $vo->getRepresentanteFuncao(),
-            'representante_cpf' => $vo->getRepresentanteCpf(),
-            'representante_rg' => $vo->getRepresentanteRg(),
-            'cidades_id' => $vo->getCidadesId()
+            ':nome' => $vo->getNome(),
+            ':endereco' => $vo->getEndereco(),
+            ':telefone' => $vo->getTelefone(),
+            ':email' => $vo->getEmail(),
+            ':cnpj' => $vo->getCnpj(),
+            ':representante_funcao' => $vo->getRepresentanteFuncao(),
+            ':representante_cpf' => $vo->getRepresentanteCpf(),
+            ':representante_rg' => $vo->getRepresentanteRg(),
+            ':cidades_id' => $vo->getCidadesId()
         ];
 
         return $db->execute($query, $binds);
