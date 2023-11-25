@@ -35,9 +35,9 @@
             <label for="telefone">Telefone:</label>
             <input type="number" name="telefone" id="telefone" placeholder="Telefone do Estudante" value="<?php echo $estudantes->getTelefone(); ?>">
 
-            <input type="hidden" name="cidades_id" value="<?php echo $estudantes->getCidadesId(); ?>">
+            <!-- <input type="hidden" name="cidades_id" value="// echo $estudantes->getCidadesId(); "> -->
 
-            <input type="hidden" name="cursos_id" value="<?php echo $estudantes->getCursosId(); ?>">
+            <!-- <input type="hidden" name="cursos_id" value="// echo $estudantes->getCursosId();"> -->
 
             <label for="num_turma">Numero da Turma:</label>
             <input type="number" name="num_turma" id="num_turma" placeholder="Numero da turma do Estudante" value="<?php echo $estudantes->getNumTurma(); ?>">

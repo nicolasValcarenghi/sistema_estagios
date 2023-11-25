@@ -15,7 +15,7 @@ final class EstudantesController extends Controller {
         $data = $model->selectAll();
 
         $this->loadView("listaEstudantes", [
-            "Estudantes" => $data
+            "estudantes" => $data
         ]);
 
     }
