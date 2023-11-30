@@ -7,17 +7,18 @@ use Model\EstagiosModel;
 use Model\EmpresasModel;
 use Model\EstudantesModel;
 use Model\ProfessoresModel;
+use Model\SupervisoresModel;
 use Model\AreasModel;
 
 
-final class EstagiosControllers extends Controller {
+final class EstagiosController extends Controller {
     
     public function list() {
         $model = new EstagiosModel();
         $data = $model->selectAll();
 
         $this->loadView("listaEstagios", [
-            "Estagios" => $data
+            "estagios" => $data
         ]);
 
     }
@@ -53,14 +54,17 @@ final class EstagiosControllers extends Controller {
             "estudantes"=> $estudantes,
             "professores"=> $professores,
             "areas"=> $areas,
-            "supervisores"=> $supervisores,
+            "supervisores"=> $supervisores
         ]);
     }
 
     public function save() {    
+
         $id = $_POST['id'];
-        $vo = new EstagiosVO($_POST['id'], $_POST['carga_horaria'], $_POST['empresas_id'], $_POST['estudantes_matricula'], 
-        $_POST['professores_id'], $_POST['area_id'], $_POST['supervisores_id'], $_POST['data_inicio'], $_POST['previsao_fim'],$_POST['cidades_id']);
+        $vo = new EstagiosVO($_POST['id'], $_POST['carga_horaria'], $_POST['empresas_id'], "",
+        $_POST['estudantes_matricula'],  "", $_POST['orientadores_id'], "", $_POST['areas_id'],
+        "",  $_POST['supervisores_id'], "", $_POST['data_inicio'], $_POST['previsao_fim'], "?", 
+        $_POST['coorientadores_id'], "", $_POST['tipo_processos'], $_POST['encaminhamentos']);
         $model = new EstagiosModel();
 
         if(empty($id)) {

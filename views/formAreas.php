@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Area</title>
+    <?php
+        require_once("views/includes/links_uteis.html");
+    ?>
+    <link rel="stylesheet" href="styles/form.css">
+    <title>Formulário de Área</title>
 </head>
 <body>
     <?php 
-        include('views/includes/menu.php');
+        require_once('views/includes/menu.php');
     ?>
     <h1>Formulário de Área</h1>
-    <a href="areas.php">Voltar para Listagem</a>
-    <form action="salvarArea.php" method="POST">
+    <a href="areas.php" id='botao_voltar_listagem'>Voltar para Listagem</a>
+    <form action="salvarAreas.php" method="POST">
         <fieldset>
             <legend>Dados da Área</legend>
-            <input type="hidden" name="id" value="<?php echo $areas->getId() ?>">
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" placeholder="Nome da Area" value="<?php echo $areas->getNome(); ?>">
-            <br>
-            <button type="submit">Salvar</button>
+            <input type="hidden" name="id" value="<?php echo $areas->getId(); ?>">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" value="<?php echo $areas->getNome(); ?>">
+            </div>
+            <button id="botao_salvar" type="submit">Salvar</button>
         </fieldset>
     </form>
+    <?php
+        require_once("views/includes/linksJS.html");
+    ?>
 </body>
 </html>

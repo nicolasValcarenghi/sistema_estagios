@@ -9,12 +9,19 @@ final class SupervisoresModel extends Model {
 
     public function selectAll($vo = null) {
         $db = new Database();
-        $data = $db->select("SELECT * FROM supervisores");
+        $data = $db->select("
+            SELECT supervisores.id, supervisores.nome, supervisores.formacao, 
+            supervisores.telefone, supervisores.email, supervisores.empresas_id,
+            empresas.nome as empresas_nome
+            FROM supervisores
+            JOIN empresas
+            ON supervisores.empresas_id = empresas.id
+        ");
 
         $array = [];
 
         foreach($data as $row) {
-            $array[] = new SupervisoresVO($row['id'], $row['nome'], $row['formacao'], $row['telefone'], $row['email'], $row['empresas_id']);            
+            $array[] = new SupervisoresVO($row['id'], $row['nome'], $row['formacao'], $row['telefone'], $row['email'], $row['empresas_id'], $row['empresas_nome']);            
         }
 
         return $array;
@@ -22,7 +29,15 @@ final class SupervisoresModel extends Model {
 
     public function selectOne($vo = null) {
         $db = new Database();
-        $query = "SELECT * FROM supervisores WHERE id = :id";
+        $query = "
+            SELECT supervisores.id, supervisores.nome, supervisores.formacao, 
+            supervisores.telefone, supervisores.email, supervisores.empresas_id,
+            empresas.nome as empresas_nome
+            FROM supervisores 
+            JOIN empresas
+            ON supervisores.empresas_id = empresas.id
+            WHERE empresas.id = :id
+        ";
         $binds = [":id" => $vo->getId()];
         $data = $db->select($query, $binds);
         
@@ -30,7 +45,7 @@ final class SupervisoresModel extends Model {
             return null;
         }
 
-        return new SupervisoresVO($data[0]['id'], $data[0]['nome'], $data[0]['formacao'], $data[0]['telefone'], $data[0]['email'], $data[0]['empresas_id']);
+        return new SupervisoresVO($data[0]['id'], $data[0]['nome'], $data[0]['formacao'], $data[0]['telefone'], $data[0]['email'], $data[0]['empresas_id'], $data[0]['empresas_nome']);
     
     }   
 

@@ -5,7 +5,7 @@ namespace Model;
 use Model\VO\CursosVO;
 use Util\Database;
 
-final class CursoModel extends Model {
+final class CursosModel extends Model {
 
     public function selectAll($vo = null) {
         $db = new Database();
@@ -14,7 +14,7 @@ final class CursoModel extends Model {
         $array = [];
 
         foreach($data as $row) {
-            $array[] = new CursoVO($row['id'], $row['nome']);            
+            $array[] = new CursosVO($row['id'], $row['nome']);            
         }
 
         return $array;
@@ -30,7 +30,7 @@ final class CursoModel extends Model {
             return null;
         }
 
-        return new CursoVO($data[0]['id'], $data[0]['nome']);
+        return new CursosVO($data[0]['id'], $data[0]['nome']);
     
     }
 

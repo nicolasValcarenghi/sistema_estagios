@@ -4,6 +4,8 @@ namespace Model\VO;
 
 final class EstudantesVO extends VO
 {
+ 
+    private $matricula;
     private $nome;
     private $email;
     private $cpf;
@@ -11,14 +13,17 @@ final class EstudantesVO extends VO
     private $endereco;
     private $telefone;
     private $cidades_id;
+    private $cidades_nome;
     private $cursos_id;
+    private $cursos_nome;
     private $num_turma;
 
-    public function __construct($matricula = 0, $nome = "", $email = "", $cpf = "", $rg = "", 
-     $endereco = "", $telefone = "", $cidades_id = 0, $cursos_id = 0, $num_turma = "")
+    public function __construct($matricula = "", $nome = "", $email = "", $cpf = "", $rg = "", 
+     $endereco = "", $telefone = "", $cidades_id = 0, $cidades_nome = "", $cursos_id = 0, $cursos_nome = "", $num_turma = "")
     {
         parent::__construct($matricula);
 
+        $this->matricula = $matricula;
         $this->nome = $nome;
         $this->email = $email;
         $this->cpf = $cpf;
@@ -26,8 +31,21 @@ final class EstudantesVO extends VO
         $this->endereco = $endereco;
         $this->telefone = $telefone;
         $this->cidades_id = $cidades_id;
+        $this->cidades_nome = $cidades_nome;
         $this->cursos_id = $cursos_id;
+        $this->cursos_nome = $cursos_nome;
         $this->num_turma = $num_turma;
+        
+    }
+
+    public function getMatricula()
+    {
+        return $this->matricula;
+    }
+
+    public function setMatricula($matricula)
+    {
+        $this->matricula = $matricula;
     }
 
     public function getNome()
@@ -99,6 +117,16 @@ final class EstudantesVO extends VO
         $this->cidades_id = $cidades_id;
     }
 
+    public function getCidadesNome()
+    {
+        return $this->cidades_nome;
+    }
+
+    public function setCidadesNome($cidades_nome)
+    {
+        $this->cidades_nome = $cidades_nome;
+    }
+
     public function getCursosId()
     {
         return $this->cursos_id;
@@ -107,6 +135,16 @@ final class EstudantesVO extends VO
     public function setCursosId($cursos_id)
     {
         $this->cursos_id = $cursos_id;
+    }
+
+    public function getCursosNome()
+    {
+        return $this->cursos_nome;
+    }
+
+    public function setCursosNome($cursos_nome)
+    {
+        $this->cursos_nome = $cursos_nome;
     }
 
     public function getNumTurma()

@@ -4,7 +4,7 @@ namespace Controller;
 
 use Model\VO\SupervisoresVO;
 use Model\SupervisoresModel;
-use Model\VO\EmpresasModel;
+use Model\EmpresasModel;
 
 
 final class SupervisoresController extends Controller {
@@ -14,7 +14,7 @@ final class SupervisoresController extends Controller {
         $data = $model->selectAll();
 
         $this->loadView("listaSupervisores", [
-            "Supervisores" => $data
+            "supervisores" => $data
         ]);
 
     }
@@ -33,14 +33,14 @@ final class SupervisoresController extends Controller {
         $empresas = $modelEmpresas->selectAll();
 
         $this->loadView("formSupervisores", [
-            "Supervisores" => $vo,
-            "Empresas"=> $empresas,          
+            "supervisores" => $vo,
+            "empresas"=> $empresas,          
         ]);
     }
 
     public function save() {    
         $id = $_POST['id'];
-        $vo = new SupervisoresVO($_POST['id'], $_POST['nome'], $_POST['formacao'], $_POST['telefone'], $_POST['email']);
+        $vo = new SupervisoresVO($_POST['id'], $_POST['nome'], $_POST['formacao'], $_POST['telefone'], $_POST['email'], $_POST['empresas_id']);
 
         $model = new SupervisoresModel();
 

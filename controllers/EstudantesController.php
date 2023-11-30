@@ -47,7 +47,7 @@ final class EstudantesController extends Controller {
     public function save() {    
         $id = $_POST['id'];
         $vo = new EstudantesVO($_POST['matricula'], $_POST['nome'], $_POST['email'], $_POST['cpf'], 
-        $_POST['rg'], $_POST['endereco'], $_POST['telefone'], $_POST['cidades_id'], $_POST['cursos_id'], $_POST['num_turma']);
+        $_POST['rg'], $_POST['endereco'], $_POST['telefone'], $_POST['cidades_id'], "", $_POST['cursos_id'], "", $_POST['num_turma']);
 
         $model = new EstudantesModel();
 

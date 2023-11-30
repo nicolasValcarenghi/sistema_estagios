@@ -14,7 +14,7 @@ final class ProfessoresController extends Controller {
         $data = $model->selectAll();
 
         $this->loadView("listaProfessores", [
-            "Professores" => $data
+            "professores" => $data
         ]);
 
     }
@@ -33,14 +33,15 @@ final class ProfessoresController extends Controller {
         $areas = $modelAreas->selectAll();
 
         $this->loadView("formProfessores", [
-            "Professores" => $vo,
-            "areas"=> $areas,          
+            "professores" => $vo,
+            "areas"=> $areas
         ]);
     }
 
     public function save() {    
+
         $id = $_POST['id'];
-        $vo = new ProfessoresVO($_POST['id'], $_POST['nome'], $_POST['email'], $_POST['areas_id']);
+        $vo = new ProfessoresVO($_POST['id'], $_POST['nome'], $_POST['email'], $_POST['areas_id'], "",$_POST['funcao']);
 
         $model = new ProfessoresModel();
 

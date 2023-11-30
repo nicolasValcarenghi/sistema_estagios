@@ -8,9 +8,10 @@ final class SupervisoresVO extends VO {
     private $telefone;
     private $email;
     private $empresas_id;
+    private $empresas_nome;
 
     public function __construct($id = 0, $nome = "", $formacao = "", $telefone = "", $email = "",
-     $empresas_id = 0)
+     $empresas_id = 0, $empresas_nome = "")
     {
         parent::__construct($id);
 
@@ -19,6 +20,7 @@ final class SupervisoresVO extends VO {
         $this->telefone = $telefone;
         $this->email = $email;
         $this->empresas_id = $empresas_id;
+        $this->empresas_nome = $empresas_nome;
     }
 
     public function getNome()
@@ -69,6 +71,16 @@ final class SupervisoresVO extends VO {
     public function setEmpresasId($empresas_id)
     {
         $this->empresas_id = $empresas_id;
+    }
+
+    public function getEmpresasNome()
+    {
+        return $this->empresas_nome;
+    }
+
+    public function setEmpresasNome($empresas_nome)
+    {
+        $this->empresas_nome = $empresas_nome;
     }
 
 }

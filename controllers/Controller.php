@@ -2,7 +2,7 @@
 
 namespace Controller;
 
-use Model\UsuarioModel;
+use Model\UsuariosModel;
 
 abstract class Controller {
 
@@ -10,12 +10,15 @@ abstract class Controller {
         session_start();
     
         if ($obrigaLogin) {
-            $model = new UsuarioModel();
+            $model = new UsuariosModel();
             if (!$model->checkLogin()) {
                 $this->redirect('login.php');
             }
         }
     }
+    
+    
+
     public function redirect ($url){
         header("location: $url");
     }

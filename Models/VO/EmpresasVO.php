@@ -9,13 +9,13 @@ final class EmpresasVO extends VO
     private $telefone;
     private $email;
     private $cnpj;
-    private $representante_funcao;
-    private $representante_cpf;
-    private $representante_rg;
+    private $representantes_id;
+    private $representantes_nome;
     private $cidades_id;
+    private $cidades_nome;
 
     public function __construct($id = 0, $nome = "", $endereco = "", $telefone = "", $email = "", 
-    $cnpj = "", $representante_funcao = "", $representante_cpf = "", $representante_rg = "", $cidades_id = 0)
+    $cnpj = "", $representantes_id = 0, $representantes_nome = "", $cidades_id = 0, $cidades_nome = "")
     {
         parent::__construct($id);
 
@@ -24,10 +24,10 @@ final class EmpresasVO extends VO
         $this->telefone = $telefone;
         $this->email = $email;
         $this->cnpj = $cnpj;
-        $this->representante_funcao = $representante_funcao;
-        $this->representante_cpf = $representante_cpf;
-        $this->representante_rg = $representante_rg;
+        $this->representantes_id = $representantes_id;
+        $this->representantes_nome = $representantes_nome;
         $this->cidades_id = $cidades_id;
+        $this->cidades_nome = $cidades_nome;
     }
 
     public function getNome()
@@ -80,36 +80,6 @@ final class EmpresasVO extends VO
         $this->cnpj = $cnpj;
     }
 
-    public function getRepresentanteFuncao()
-    {
-        return $this->representante_funcao;
-    }
-
-    public function setRepresentanteFuncao($representante_funcao)
-    {
-        $this->representante_funcao = $representante_funcao;
-    }
-
-    public function getRepresentanteCpf()
-    {
-        return $this->representante_cpf;
-    }
-
-    public function setRepresentanteCpf($representante_cpf)
-    {
-        $this->representante_cpf = $representante_cpf;
-    }
-
-    public function getRepresentanteRg()
-    {
-        return $this->representante_rg;
-    }
-
-    public function setRepresentanteRg($representante_rg)
-    {
-        $this->representante_rg = $representante_rg;
-    }
-
     public function getCidadesId()
     {
         return $this->cidades_id;
@@ -119,4 +89,31 @@ final class EmpresasVO extends VO
     {
         $this->cidades_id = $cidades_id;
     }
+
+    public function getCidadeNome() {
+        return $this->cidades_nome;
+    }
+
+    public function setCidadeNome($cidades_nome) {
+        $this->cidades_nome = $cidades_nome;
+    }
+
+    public function getRepresentantesId()
+    {
+        return $this->representantes_id;
+    }
+
+    public function setRepresentantesId($representantes_id)
+    {
+        $this->representantes_id = $representantes_id;
+    }
+
+    public function getRepresentanteNome() {
+        return $this->representantes_nome;
+    }
+
+    public function setRepresentanteNome($representantes_nome) {
+        $this->representantes_nome = $representantes_nome;
+    }
+
 }

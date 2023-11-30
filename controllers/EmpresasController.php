@@ -3,6 +3,8 @@
 namespace Controller;
 
 use Model\EmpresasModel;
+use Model\CidadesModel;
+use Model\RepresentantesModel;
 use Model\VO\EmpresasVO;
 
 final class EmpresasController extends Controller {
@@ -27,8 +29,16 @@ final class EmpresasController extends Controller {
             $vo = $model->selectOne(new EmpresasVO($id));
         }
 
+        $modelCidades = new CidadesModel();
+        $cidades = $modelCidades->selectAll();
+
+        $modelRepresentantes = new RepresentantesModel();
+        $representantes = $modelRepresentantes->selectAll();
+
         $this->loadView("formEmpresas", [
-            "empresas" => $vo
+            "empresas" => $vo,
+            "cidades" => $cidades,
+            "representantes" => $representantes
         ]);
     }
 
@@ -36,8 +46,8 @@ final class EmpresasController extends Controller {
         
         $id = $_POST['id'];
         $vo = new EmpresasVO($_POST['id'], $_POST['nome'] , $_POST['endereco'] , 
-        $_POST['telefone'] , $_POST['email'], $_POST['cnpj'],$_POST['representante_funcao'] ,
-        $_POST['representante_cpf'] ,$_POST['representante_rg'] ,$_POST['cidades_id']);
+        $_POST['telefone'] , $_POST['email'], $_POST['cnpj'], $_POST['representantes_id'], "", $_POST['cidades_id'], 0);
+        
         $model = new EmpresasModel();
         
         if(empty($id)) {

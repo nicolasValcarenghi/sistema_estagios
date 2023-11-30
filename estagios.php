@@ -3,5 +3,5 @@
 require_once('config.php');
 require_once('vendor/autoload.php');
 
-$controller = new Controller\EstagiosControllers();
+$controller = new Controller\EstagiosController();
 $controller->list();

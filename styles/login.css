@@ -6,7 +6,6 @@
 #all {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    height: 100vh;
 }
 
 #logo {
@@ -65,7 +64,7 @@
 }
 h1 {
     margin: 50px 0px 10px 0px;
-    word-break: break-all;
+    word-wrap: break-word;
     font-size: 60px;
     text-align: center;
     color: rgb(89, 172, 7);

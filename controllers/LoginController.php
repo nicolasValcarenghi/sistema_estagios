@@ -2,8 +2,8 @@
 
 namespace Controller;
 
-use Model\UsuarioModel;
-use Model\VO\UsuarioVO;
+use Model\UsuariosModel;
+use Model\VO\UsuariosVO;
 
 final class LoginController extends Controller {
 
@@ -16,22 +16,22 @@ final class LoginController extends Controller {
     }
 
     public function fazerLogin() {
-        $vo = new UsuarioVO(0, "", $_POST['login'], $_POST['senha']);
-        $model = new UsuarioModel();
+        $vo = new UsuariosVO(0, "", $_POST['login'], $_POST['senha']);
+        $model = new UsuariosModel();
 
         $sucess = $model->doLogin($vo);
 
         if($sucess) {
-            $this->redirect("alunos.php");
+            $this->redirect("estagios.php");
         }
         else {
             $this->redirect("login.php");
         }
-        $this->redirect("alunos.php");
+        $this->redirect("estagios.php");
     }
 
     public function logout() {
-        $model = new UsuarioModel();
+        $model = new UsuariosModel();
         $model->logout();
         $this->redirect("login.php");
     }

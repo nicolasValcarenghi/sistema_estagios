@@ -28,7 +28,7 @@ final class AreasController extends Controller {
         }
 
         $this->loadView("formAreas", [
-            "Areas" => $vo
+            "areas" => $vo
         ]);
     }
 

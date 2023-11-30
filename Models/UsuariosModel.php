@@ -14,7 +14,7 @@ final class UsuariosModel extends Model {
         $array = [];
 
         foreach($data as $row) {
-            $array[] = new UsuariosVO($row['id'], $row['nome'], $row['login'], $row['senha'], $row['tipo']);            
+            $array[] = new UsuariosVO($row['id'], $row['nome'], $row['login'], $row['senha']);            
         }
 
         return $array;
@@ -30,19 +30,18 @@ final class UsuariosModel extends Model {
             return null;
         }
 
-        return new UsuariosVO($data[0]['id'], $data[0]['nome'], $data[0]['login'], $data[0]['senha'], $data[0]['tipo']);
+        return new UsuariosVO($data[0]['id'], $data[0]['nome'], $data[0]['login'], $data[0]['senha']);
     
     }
 
     public function insert($vo) {
 
         $db = new Database();
-        $query = "INSERT INTO usuarios (nome, login, senha, tipo) VALUES (:nome, :login, :senha, :tipo)";
+        $query = "INSERT INTO usuarios (nome, login, senha) VALUES (:nome, :login, :senha)";
         $binds = [
             ":nome" => $vo->getNome(),
             ":login" => $vo->getLogin(),
-            ":senha" => sha1($vo->getSenha()),
-            ":tipo" => $vo->getTipo()
+            ":senha" => sha1($vo->getSenha())
         ];
 
         $sucess = $db->execute($query, $binds);
@@ -60,17 +59,16 @@ final class UsuariosModel extends Model {
         $db = new Database();
         $binds = [
             ":nome" => $vo->getNome(),
-            ":tipo" => $vo->getTipo(),
             ":login" => $vo->getLogin(),
             ":id" => $vo->getId()
         ];
         
         if (empty($vo->getSenha())) {
-            $query = "UPDATE usuarios SET nome = :nome, login = :login, tipo = :tipo WHERE id = :id";
+            $query = "UPDATE usuarios SET nome = :nome, login = :login WHERE id = :id";
         }
         else {
             $binds["senha"] = sha1($vo->getSenha());
-            $query = "UPDATE usuarios SET nome = :nome, login = :login, senha = :senha, tipo = :tipo WHERE id = :id";
+            $query = "UPDATE usuarios SET nome = :nome, login = :login, senha = :senha WHERE id = :id";
         }
 
         return $db->execute($query, $binds);
@@ -103,23 +101,23 @@ final class UsuariosModel extends Model {
             return false;
         }
 
-        $usuarios = new UsuariosVO($data[0]['id'], $data[0]['nome'], $data[0]['login'], $data[0]['senha'], $data[0]['tipo']);
+        $usuarios = new UsuariosVO($data[0]['id'], $data[0]['nome'], $data[0]['login'], $data[0]['senha']);
 
-        $_SESSION["Usuarios"] = $usuarios;
+        $_SESSION["usuarios"] = $usuarios;
 
         return true;
 
     }
 
     public function checkLogin() {
-        if(empty($_SESSION['Usuarios'])) {
+        if(empty($_SESSION["usuarios"])) {
             return false;
         }
         return true;
     }
 
     public function logout() {
-        $_SESSION['Usuarios'] = null;
+        $_SESSION["usuarios"] = null;
     }
 
 }

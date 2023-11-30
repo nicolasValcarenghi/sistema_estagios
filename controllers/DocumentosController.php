@@ -4,6 +4,9 @@ namespace Controller;
 
 use Model\DocumentosModel;
 use Model\VO\DocumentosVO;
+use Model\EstagiosModel;
+
+require_once('helpers/ArquivosHelper.php');
 
 final class DocumentosController extends Controller {
     
@@ -27,17 +30,21 @@ final class DocumentosController extends Controller {
             $vo = $model->selectOne(new DocumentosVO($id));
         }
 
+        $model_estagio = new EstagiosModel();
+        $estagios = $model_estagio->selectAll();
+
         $this->loadView("formDocumentos", [
-            "documentos" => $vo
+            "documentos" => $vo,
+            "estagios"=> $estagios
         ]);
     }
 
     public function save() {
         
         $id = $_POST['id'];
-        $vo = new DocumentosVO($_POST['id'], $_POST['estagios_id'] , $_POST['termo_de_compromisso'] , 
-        $_POST['plano_de_atividade'] , $_POST['ficha_de_autoavalicao'], $_POST['ficha_avaliacao_empresa'],
-         $_POST['relatorio_final']);
+        $vo = new DocumentosVO($_POST['id'], $_POST['estagios_id'] , gravarArquivo($_FILES['termo_de_compromisso']) , 
+        gravarArquivo($_FILES['plano_de_atividade']) , gravarArquivo($_FILES['ficha_de_autoavalicao']), gravarArquivo($_FILES['ficha_avaliacao_empresa']),
+         gravarArquivo($_FILES['relatorio_final']), "", 0);
         $model = new DocumentosModel();
         
         if(empty($id)) {

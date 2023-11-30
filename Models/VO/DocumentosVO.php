@@ -10,9 +10,12 @@ final class DocumentosVO extends VO
     private $ficha_autoavaliacao;
     private $ficha_avaliacao_empresa;
     private $relatorio_final;
+    private $alunos_nome;
+    private $alunos_matricula;
 
     public function __construct($id = 0, $estagios_id = 0, $termo_de_compromisso = "", 
-    $plano_de_atividade = "", $ficha_autoavaliacao = "", $ficha_avaliacao_empresa = "", $relatorio_final = "")
+    $plano_de_atividade = "", $ficha_autoavaliacao = "", $ficha_avaliacao_empresa = "", 
+    $relatorio_final = "", $alunos_nome = "", $alunos_matricula = 0)
     {
         parent::__construct($id);
 
@@ -22,14 +25,16 @@ final class DocumentosVO extends VO
         $this->ficha_autoavaliacao = $ficha_autoavaliacao;
         $this->ficha_avaliacao_empresa = $ficha_avaliacao_empresa;
         $this->relatorio_final = $relatorio_final;
+        $this->alunos_nome = $alunos_nome;
+        $this->alunos_matricula = $alunos_matricula;
     }
 
-    public function getEstagioId()
+    public function getEstagiosId()
     {
         return $this->estagios_id;
     }
 
-    public function setEstagioId($estagios_id)
+    public function setEstagiosId($estagios_id)
     {
         $this->estagios_id = $estagios_id;
     }
@@ -82,6 +87,26 @@ final class DocumentosVO extends VO
     public function setRelatorioFinal($relatorio_final)
     {
         $this->relatorio_final = $relatorio_final;
+    }
+
+    public function getAlunosNome()
+    {
+        return $this->alunos_nome;
+    }
+
+    public function setAlunosNome($alunos_nome)
+    {
+        $this->alunos_nome = $alunos_nome;
+    }
+
+    public function getAlunosMatricula()
+    {
+        return $this->alunos_matricula;
+    }
+
+    public function setAlunosMatricula($alunos_matricula)
+    {
+        $this->alunos_matricula = $alunos_matricula;
     }
 
 }
