@@ -1,3 +1,6 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
 #div_tabela_estagios {
     display: flex;
     justify-content: center;

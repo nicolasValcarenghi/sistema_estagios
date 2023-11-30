@@ -1,7 +1,8 @@
 *{
-    font-family: 'JetBrains Mono', monospace;
     margin: 0px;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    
 }
 #all {
     display: grid;

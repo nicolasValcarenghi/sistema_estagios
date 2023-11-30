@@ -47,6 +47,13 @@ final class EmpresasController extends Controller {
         $id = $_POST['id'];
         $vo = new EmpresasVO($_POST['id'], $_POST['nome'] , $_POST['endereco'] , 
         $_POST['telefone'] , $_POST['email'], $_POST['cnpj'], $_POST['representantes_id'], "", $_POST['cidades_id'], 0);
+
+        if ($_POST['id'] == NULL || $_POST['nome']  == NULL || $_POST['endereco']  == NULL || 
+        $_POST['telefone']  == NULL || $_POST['email'] == NULL || $_POST['cnpj'] == NULL || 
+        $_POST['representantes_id'] == NULL || $_POST['cidades_id'] == NULL) {
+            header("location:empresa.php");
+            die;
+        }
         
         $model = new EmpresasModel();
         

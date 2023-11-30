@@ -42,6 +42,12 @@ final class SupervisoresController extends Controller {
         $id = $_POST['id'];
         $vo = new SupervisoresVO($_POST['id'], $_POST['nome'], $_POST['formacao'], $_POST['telefone'], $_POST['email'], $_POST['empresas_id']);
 
+        if ($_POST['id'] == NULL || $_POST['nome'] == NULL || $_POST['formacao'] == NULL 
+        || $_POST['telefone'] == NULL || $_POST['email'] == NULL || $_POST['empresas_id'] == NULL) {
+            header("location:supervisor.php");
+            die;
+        }
+
         $model = new SupervisoresModel();
 
         if(empty($id)) {

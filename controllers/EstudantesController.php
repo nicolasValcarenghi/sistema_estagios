@@ -46,6 +46,13 @@ final class EstudantesController extends Controller {
 
     public function save() {    
         $id = $_POST['id'];
+
+        if ($_POST['matricula'] == NULL || $_POST['nome'] == NULL || $_POST['email'] == NULL || $_POST['cpf'] == NULL || 
+        $_POST['rg'] == NULL || $_POST['endereco'] == NULL || $_POST['telefone'] == NULL || $_POST['cidades_id'] == NULL || $_POST['cursos_id'] == NULL || $_POST['num_turma'] == NULL) {
+            header("location:estudante.php");
+            die;
+        }
+
         $vo = new EstudantesVO($_POST['matricula'], $_POST['nome'], $_POST['email'], $_POST['cpf'], 
         $_POST['rg'], $_POST['endereco'], $_POST['telefone'], $_POST['cidades_id'], "", $_POST['cursos_id'], "", $_POST['num_turma']);
 

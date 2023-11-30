@@ -35,6 +35,12 @@ final class CursosController extends Controller {
     public function save() {
         
         $id = $_POST['id'];
+
+        if ($_POST['nome'] == NULL) {
+            header("location:curso.php");
+            die;
+        }
+
         $vo = new CursosVO($_POST['id'], $_POST['nome']);
         $model = new CursosModel();
         

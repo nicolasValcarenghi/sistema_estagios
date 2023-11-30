@@ -248,6 +248,8 @@ CREATE TABLE IF NOT EXISTS `sistema_estagios`.`usuarios` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+ALTER TABLE professores DROP funcao;
+
 INSERT INTO usuarios (nome, login, senha)
 VALUES ('Érika', 'Érika', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
 -- 1234

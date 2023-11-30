@@ -37,6 +37,12 @@ final class RepresentantesController extends Controller {
         $id = $_POST['id'];
         $vo = new RepresentantesVO($_POST['id'], $_POST['cpf'], $_POST['rg'], $_POST['funcao'], $_POST['nome']);
 
+        if ($_POST['id'] = NULL || $_POST['cpf'] = NULL || $_POST['rg'] = NULL ||
+        $_POST['funcao'] = NULL || $_POST['nome'] = NULL) {
+            header("location:representante.php");
+            die;
+        }
+
         $model = new RepresentantesModel();
 
         if(empty($id)) {

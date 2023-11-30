@@ -41,7 +41,11 @@ final class ProfessoresController extends Controller {
     public function save() {    
 
         $id = $_POST['id'];
-        $vo = new ProfessoresVO($_POST['id'], $_POST['nome'], $_POST['email'], $_POST['areas_id'], "",$_POST['funcao']);
+        $vo = new ProfessoresVO($_POST['id'], $_POST['nome'], $_POST['email'], $_POST['areas_id'], "");
+
+        if ($_POST['nome'] == NULL || $_POST['email'] == NULL || $_POST['areas_id'] == NULL) {
+            header("location:professor.php");
+        }
 
         $model = new ProfessoresModel();
 

@@ -33,8 +33,8 @@
                 <?php
                     foreach ($documentos as $index => $documento) {
                         echo "<tr>";
-                        echo "<td><a href='estudantes.php?id=". $documento->getEstudantesMatricula() ."'>". $documento->getEstudantesNome() ."</a></td>";
-                        echo "<td>". $documento->getEstudantesMatricula() ."</td>";
+                        echo "<td><a href='estudantes.php?id=". $documento->getAlunosMatricula() ."'>". $documento->getAlunosNome() ."</a></td>";
+                        echo "<td>". $documento->getAlunosMatricula() ."</td>";
                         echo "<td>". $documento->getTermoDeCompromisso() . "</td>";
                         echo "<td>". $documento->getPlanoDeAtividade() . "</td>";
                         echo "<td>". $documento->getFichaAutoavaliacao() . "</td>";
@@ -49,7 +49,7 @@
                 ?>
             </tbody>
         </table>
-    </div>
+    </div> 
     <?php
         require_once("views/includes/linksJS.html");
     ?>

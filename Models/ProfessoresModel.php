@@ -10,7 +10,7 @@ final class ProfessoresModel extends Model {
     public function selectAll($vo = null) {
         $db = new Database();
         $data = $db->select("
-            SELECT professores.id, professores.nome, professores.email, professores.areas_id, areas.nome as areas_nome, professores.funcao
+            SELECT professores.id, professores.nome, professores.email, professores.areas_id, areas.nome as areas_nome
             FROM professores
             JOIN areas
             ON professores.areas_id = areas.id;
@@ -19,7 +19,7 @@ final class ProfessoresModel extends Model {
         $array = [];
 
         foreach($data as $row) {
-            $array[] = new ProfessoresVO($row['id'], $row['nome'], $row['email'], $row['areas_id'], $row['areas_nome'], $row['funcao']);            
+            $array[] = new ProfessoresVO($row['id'], $row['nome'], $row['email'], $row['areas_id'], $row['areas_nome']);            
         }
 
         return $array;
@@ -28,7 +28,7 @@ final class ProfessoresModel extends Model {
     public function selectOne($vo = null) {
         $db = new Database();
         $query = " SELECT professores.id, professores.nome, professores.email, professores.areas_id,
-        areas.nome as areas_nome, professores.funcao
+        areas.nome as areas_nome
         FROM professores
         JOIN areas
         ON professores.areas_id = areas.id; WHERE id = :id";
@@ -39,19 +39,18 @@ final class ProfessoresModel extends Model {
             return null;
         }
     
-        return new ProfessoresVO($data[0]['id'], $data[0]['nome'], $data[0]['email'], $data[0]['areas_id'], $data[0]['areas_nome'], $data[0]['funcao']);
+        return new ProfessoresVO($data[0]['id'], $data[0]['nome'], $data[0]['email'], $data[0]['areas_id'], $data[0]['areas_nome']);
     
     }   
 
     public function insert($vo) {
 
         $db = new Database();
-        $query = "INSERT INTO professores (nome, email, areas_id, funcao) VALUES (:nome, :email, :areas_id, :funcao)";
+        $query = "INSERT INTO professores (nome, email, areas_id) VALUES (:nome, :email, :areas_id)";
         $binds = [
             ':nome' => $vo->getNome(),
             ':email' => $vo->getEmail(),
-            ':areas_id' => $vo->getAreaId(),
-            ':funcao' => $vo->getFuncao()
+            ':areas_id' => $vo->getAreaId()
         ];
 
         $sucess = $db->execute($query, $binds);
@@ -67,12 +66,11 @@ final class ProfessoresModel extends Model {
     public function update($vo) {
 
         $db = new Database();
-        $query = "UPDATE professores SET nome = :nome, email = :email, areas_id = :areas_id, funcao = :funcao WHERE id = :id";
+        $query = "UPDATE professores SET nome = :nome, email = :email, areas_id = :areas_id WHERE id = :id";
         $binds = [
             ':nome' => $vo->getNome(),
             ':email' => $vo->getEmail(),
             ':areas_id' => $vo->getAreaId(),
-            ':funcao' => $vo->getFuncao(),
             ':id' => $vo->getId()
         ];
 

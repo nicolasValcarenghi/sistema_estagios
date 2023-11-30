@@ -22,7 +22,7 @@ final class DocumentosModel extends Model {
         $array = [];
 
         foreach($data as $row) {
-            $array[] = new DocumentosVO($row['id'], $row['estagios_id'], $row['termo_de_compromisso'], $row['plano_de_atividade'], $row['ficha_autoavaliacao'], $row['ficha_avaliacao_empresa'], $row['relatorio_final'], $row['estudantes_id'], $row['estudantes_nome']);            
+            $array[] = new DocumentosVO($row['id'], $row['estagios_id'], $row['termo_de_compromisso'], $row['plano_de_atividade'], $row['ficha_autoavaliacao'], $row['ficha_avaliacao_empresa'], $row['relatorio_final'], $row['estudantes_nome'], $row['estudantes_matricula']);            
         }
 
         return $array;

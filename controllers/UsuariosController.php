@@ -36,6 +36,11 @@ final class UsuariosController extends Controller {
         $id = $_POST['id'];
         $vo = new UsuariosVO($_POST['id'], $_POST['nome'], $_POST['login'], $_POST['senha']);
         $model = new UsuariosModel();
+
+        if ($_POST['id'] == NULL || $_POST['nome'] == NULL || $_POST['login'] == NULL || $_POST['senha'] == NULL) {
+            header("location:usuario.php");
+            die;
+        }
         
         if(empty($id)) {
             $return = $model->insert($vo);

@@ -45,9 +45,7 @@
                 <select name="orientadores_id" id="orientadores_id">
                     <?php
                         foreach ($professores as $orientador) {
-                            if ($orientador->getFuncao() == 'orientador') {
-                                echo "<option value='". $orientador->getId() ."'>". $orientador->getNome() ."</option>";
-                            }
+                            echo "<option value='". $orientador->getId() ."'>". $orientador->getNome() ."</option>";
                         }
                     ?>
                 </select>
@@ -57,9 +55,7 @@
                 <select name="coorientadores_id" id="coorientadores_id">
                     <?php
                         foreach ($professores as $coorientador) {
-                            if ($coorientador->getFuncao() == 'coorientador') {
-                                echo "<option value='". $coorientador->getId() ."'>". $coorientador->getNome() ."</option>";
-                            }
+                            echo "<option value='". $coorientador->getId() ."'>". $coorientador->getNome() ."</option>";
                         }
                     ?>
                 </select>

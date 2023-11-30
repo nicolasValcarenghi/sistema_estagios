@@ -42,6 +42,10 @@ final class DocumentosController extends Controller {
     public function save() {
         
         $id = $_POST['id'];
+
+        if ($_POST['id'] == NULL || $_POST['estagios_id'] == NULL || $_FILES['termo_de_compromisso'] == NULL || $_FILES['plano_de_atividade'] == NULL || 
+        $_FILES['ficha_de_autoavalicao'] == NULL || $_FILES['ficha_avaliacao_empresa'] == NULL || $_FILES['relatorio_final'] == NULL ) header("location: documento.php");
+
         $vo = new DocumentosVO($_POST['id'], $_POST['estagios_id'] , gravarArquivo($_FILES['termo_de_compromisso']) , 
         gravarArquivo($_FILES['plano_de_atividade']) , gravarArquivo($_FILES['ficha_de_autoavalicao']), gravarArquivo($_FILES['ficha_avaliacao_empresa']),
          gravarArquivo($_FILES['relatorio_final']), "", 0);

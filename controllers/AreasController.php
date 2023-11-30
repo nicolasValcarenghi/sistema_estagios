@@ -34,6 +34,12 @@ final class AreasController extends Controller {
 
     public function save() {    
         $id = $_POST['id'];
+
+        if ($_POST['nome'] == NULL) {
+            header("location: area.php");
+            die;
+        }
+
         $vo = new AreasVO($_POST['id'], $_POST['nome']);
         $model = new AreasModel();
         

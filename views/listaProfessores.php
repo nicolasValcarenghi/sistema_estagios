@@ -22,7 +22,6 @@
                     <td>Nome</td>
                     <td>Email</td>
                     <td>Área</td>
-                    <td>Função</td>
                     <td>Funções</td>
                 </tr>
             </thead>
@@ -34,7 +33,6 @@
                         echo "<td>". $professor->getNome() ."</td>";
                         echo "<td>". $professor->getEmail() ."</td>";
                         echo "<td>". $professor->getAreaNome() ."</td>";
-                        echo "<td>". $professor->getFuncao() ."</td>";
                         echo "<td id='td_funcoes'>";
                             echo "<a href = 'professor.php?id=". $professor->getId() . "'><i class='fa-solid fa-pencil'></i></a>";
                             echo "<a href = 'excluirProfessores.php?id=". $professor->getId() . "'><i class='fa-solid fa-trash'></i></a>";

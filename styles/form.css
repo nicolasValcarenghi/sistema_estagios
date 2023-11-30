@@ -1,3 +1,6 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
 fieldset {
     width: max-content;
     display: flex;

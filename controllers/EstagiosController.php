@@ -65,6 +65,7 @@ final class EstagiosController extends Controller {
         $_POST['estudantes_matricula'],  "", $_POST['orientadores_id'], "", $_POST['areas_id'],
         "",  $_POST['supervisores_id'], "", $_POST['data_inicio'], $_POST['previsao_fim'], "?", 
         $_POST['coorientadores_id'], "", $_POST['tipo_processos'], $_POST['encaminhamentos']);
+
         $model = new EstagiosModel();
 
         if(empty($id)) {

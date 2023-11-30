@@ -38,12 +38,6 @@
                     ?>
                 </select>
             </div>
-            <div>
-                <label for="coorientador">Coorientador</label>
-                <input type="radio" name="funcao" value="coorientador" id="coorientador" <?php if ($professores->getFuncao() == 'coorientador') echo 'checked'; ?>>
-                <label for="orientador">Orientador</label>
-                <input type="radio" name="funcao" value="orientador" id="orientador" <?php if ($professores->getFuncao() == 'orientador') echo 'checked'; ?>>
-            </div>
             <button id="botao_salvar" type="submit">Salvar</button>
         </fieldset>
     </form>

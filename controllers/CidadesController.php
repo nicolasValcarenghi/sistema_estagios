@@ -35,6 +35,12 @@ final class CidadesController extends Controller {
     public function save() {
         
         $id = $_POST['id'];
+
+        if ($_POST['nome'] == NULL || $_POST['uf']  == NULL || $_POST['cep'] == NULL) {
+            header("location:cidade.php");  
+            die;
+        }
+
         $vo = new CidadesVO($_POST['id'], $_POST['nome'], $_POST['uf'] , $_POST['cep']);
         $model = new CidadesModel();
         
